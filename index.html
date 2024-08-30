@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Conversor De Moedas</title>
+</head>
+
+<body>
+    <img src="./img/logo.gif" alt="maoMoeda" class="logo-topo">
+
+    <div class="retanguloPrincipal">
+
+        <div class="primeiroselect">
+            <span class="primeirospan">Converter <b>de</b></span>
+            <br>
+            <select class="bandeiraaconverter">
+                <option value="real">R$ Real Brasileiro</option>        
+                <option value="dolar">US$ Dólar americano</option>
+                <option value="euro">€ Euro</option>
+                <option value="CAD">CAD$ Dólar canadense</option>
+                <option value="libra">£ Libra esterlina</option>
+                
+            </select>
+        </div>
+
+
+        <div class="segundoselect">
+            <span class="segundospan">Converter <b>para</b></span>
+            <br>
+            <select class="bandeiraconvertida">        
+                     
+                <option value="dolar">US$ Dólar americano</option>
+                <option value="real">R$ Real Brasileiro</option>   
+                <option value="euro">€ Euro</option>
+                <option value="CAD">CAD$ Dólar canadense</option>
+                <option value="libra">£ Libra esterlina</option>
+            </select>
+        </div>
+
+
+        <div class="resulvalor">
+            <span>Valor: </span>
+            <div>
+                <input class="convertido" type="text" placeholder="Digite aqui o valor">
+            </div>
+
+        </div>
+
+        <button class="converter-button">Fazer conversão</button>
+
+        <div class="retanguloconversão">
+
+
+            <div class="currency-box">
+                <img src="./img/brasil 2.png" alt="brasil" class="bandeiraMoedaIda" >
+                <p class="textoMoeda">Real</p>
+                <h4 class="valormoedaida">R$ 0,00</h4>
+            </div>
+
+            <img src="./img/Vector.png" alt="seta" class="setaconversor">
+
+            <div class="currency-box">
+                <img src="./img//estados-unidos (1) 1.png" alt="usa" class="bandeiraMoedaida" id="moedaImg">
+                <p class="textoMoeda" id="segundamoeda">Dólar americano</p>
+                <h4 class="valormoedavolta">U$ 0.00</h4>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+<script src="./script.js"></script>
+
+</html>
