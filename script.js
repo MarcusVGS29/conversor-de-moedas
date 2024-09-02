@@ -97,9 +97,42 @@ function changemoeda() {
 }
 
 
+function trocaMoeda() {
+    const dolarnome1 = document.getElementById("primeiramoeda")
+    const imagemMoeda1 = document.getElementById("moedaImg1")
+
+    if (currencyToConvert.value == "dolar") {
+        dolarnome1.innerHTML = "Dólar americano"
+        imagemMoeda1.src = "./img/estados-unidos (1) 1.png"
+    }
+
+    if (currencyToConvert.value == "euro") {
+        dolarnome1.innerHTML = "Euro"
+        imagemMoeda1.src = "./img/Euro.png"
+    }
+
+    if (currencyToConvert.value == "libra") {
+        dolarnome1.innerHTML = "Libra esterlina"
+        imagemMoeda1.src = "./img/libra.png"
+    }
+
+    if (currencyToConvert.value == "CAD") {
+        dolarnome1.innerHTML = "Dólar canadense"
+        imagemMoeda1.src = "./img/canada.png"
+    }
+    if (currencyToConvert.value == "real") {
+        dolarnome1.innerHTML = "Real"
+        imagemMoeda1.src = "./img/brasil 2.png"
+
+    }
+
+
+    convertValues()
+}
+
 convertbutton.addEventListener("click", convertValues) //aqui, chama a função acima, SOMENTE quando o botão for clicado (click)
 currencySelect.addEventListener("change", changemoeda) //aqui, chama a função que muda o nome e o cifrão da moeda, SOMENTE quando mudamos a opção de moeda (change)
-
+currencyToConvert.addEventListener("change", trocaMoeda)
 
 
 
