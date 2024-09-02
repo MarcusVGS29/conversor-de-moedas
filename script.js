@@ -5,6 +5,9 @@ const convertbutton = document.querySelector(".converter-button") //mapeando o b
 const currencySelect = document.querySelector(".bandeiraconvertida")
 const currencyToConvert = document.querySelector(".bandeiraaconverter")
 
+
+
+
 /* abaixo uma função criada para os acontecimentos do botão */
 function convertValues() {
     const inputvalor = document.querySelector(".convertido").value //variavel que pega o valor do input
@@ -20,6 +23,43 @@ function convertValues() {
     const cadhoje = 4.10 //variavel do dolar canadense FICTICIO
     const realhoje = 1.0 // //variavel do real FICTICIO
 
+    //Vai alterar os cifrões das primeiras moedas
+    if (currencyToConvert.value == "real") { // SE o select for dolar, vai entrar aqui.
+        valorida.innerHTML = new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        }).format(inputvalor) //pega o valor covertido e coloca abaixo da segunda moeda (outras moedas)
+    }
+    if (currencyToConvert.value == "dolar") { // SE o select for dolar, vai entrar aqui.
+        valorida.innerHTML = new Intl.NumberFormat("en-us", {
+            style: "currency",
+            currency: "USD"
+        }).format(inputvalor) //pega o valor covertido e coloca abaixo da segunda moeda (outras moedas)
+    }
+    if (currencyToConvert.value == "euro") { // SE o select for dolar, vai entrar aqui.
+        valorida.innerHTML = new Intl.NumberFormat("de-DE", {
+            style: "currency",
+            currency: "EUR"
+        }).format(inputvalor) //pega o valor covertido e coloca abaixo da segunda moeda (outras moedas)
+    }
+    if (currencyToConvert.value == "libra") { // SE o select for dolar, vai entrar aqui.
+        valorida.innerHTML = new Intl.NumberFormat("en-GB", {
+            style: "currency",
+            currency: "GBP"
+        }).format(inputvalor) //pega o valor covertido e coloca abaixo da segunda moeda (outras moedas)
+    }
+    if (currencyToConvert.value == "CAD") { // SE o select for dolar, vai entrar aqui.
+        valorida.innerHTML = new Intl.NumberFormat("en-CA", {
+            style: "currency",
+            currency: "CAD"
+        }).format(inputvalor) //pega o valor covertido e coloca abaixo da segunda moeda (outras moedas)
+    }
+
+
+
+
+
+    //Vai alterar os cifrões das segundas moedas
     if (currencySelect.value == "dolar") { // SE o select for dolar, vai entrar aqui.
         valorvolta.innerHTML = new Intl.NumberFormat("en-us", {
             style: "currency",
@@ -52,13 +92,7 @@ function convertValues() {
         }).format(inputvalor / realhoje)
     }
 
-
-    valorida.innerHTML = new Intl.NumberFormat("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-
-    }).format(inputvalor) //pega o valor digitado e coloca abaixo da primeira moeda (real)
-
+    
 
 
 }
@@ -94,6 +128,7 @@ function changemoeda() {
 
 
     convertValues()
+    
 }
 
 
@@ -128,11 +163,14 @@ function trocaMoeda() {
 
 
     convertValues()
+    
 }
 
 convertbutton.addEventListener("click", convertValues) //aqui, chama a função acima, SOMENTE quando o botão for clicado (click)
 currencySelect.addEventListener("change", changemoeda) //aqui, chama a função que muda o nome e o cifrão da moeda, SOMENTE quando mudamos a opção de moeda (change)
+
 currencyToConvert.addEventListener("change", trocaMoeda)
+
 
 
 
